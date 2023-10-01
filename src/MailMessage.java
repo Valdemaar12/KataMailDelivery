@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /*
 Письмо, у которого есть текст, который можно получить с помощью метода `getMessage`
 */
@@ -22,9 +24,7 @@ public class MailMessage extends AbstractSendable {
 
         MailMessage that = (MailMessage) o;
 
-        if (message != null ? !message.equals(that.message) : that.message != null) return false;
-
-        return true;
+        return Objects.equals(message, that.message);
     }
 
 }

@@ -30,9 +30,7 @@ public abstract class AbstractSendable implements Sendable {
         AbstractSendable that = (AbstractSendable) o;
 
         if (!from.equals(that.from)) return false;
-        if (!to.equals(that.to)) return false;
-
-        return true;
+        return to.equals(that.to);
     }
 
 }
