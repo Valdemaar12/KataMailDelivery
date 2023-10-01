@@ -8,7 +8,7 @@ public class Spy implements MailService {
     @Override
     public Sendable processMail(Sendable mail) {
         if (mail instanceof MailMessage) {
-            if (mail.getFrom().equals(Main.AUSTIN_POWERS)) {
+            if (mail.getFrom().equals(Main.AUSTIN_POWERS) || mail.getTo().equals(Main.AUSTIN_POWERS)) {
                 loggerSpy.log(Level.WARNING, "Detected target mail correspondence: from {0} to {1} \"{2}\"",
                         new Object[]{mail.getFrom(), mail.getTo(), ((MailMessage) mail).getMessage()});
             } else {
@@ -19,7 +19,8 @@ public class Spy implements MailService {
         return mail;
     }
 
-    Spy(Logger logger) {
+
+    public Spy(Logger logger) {
         loggerSpy = logger;
     }
 }

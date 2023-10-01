@@ -1,7 +1,7 @@
 public class UntrustworthyMailWorker implements MailService {
-    public MailService[] mailService;
+    private MailService[] mailService;
 
-    public RealMailService realMailService;
+    private RealMailService realMailService;
 
     @Override
     public Sendable processMail(Sendable mail) {
@@ -12,7 +12,7 @@ public class UntrustworthyMailWorker implements MailService {
         return realMailService.processMail(count);
     }
 
-    UntrustworthyMailWorker(MailService[] mailService) {
+    public UntrustworthyMailWorker(MailService[] mailService) {
         this.mailService = mailService;
     }
 

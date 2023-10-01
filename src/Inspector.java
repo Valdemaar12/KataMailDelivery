@@ -1,3 +1,4 @@
+import Exception.*;
 public class Inspector implements MailService {
 
     @Override
